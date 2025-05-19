@@ -1,0 +1,162 @@
+/* .health-cards {
+    display: grid;
+    grid-template-areas:
+      "card1 card2"
+      "card3 card3"
+      ".     card4";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f6f9f8;
+  }
+  
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    font-size: 1.3rem;
+    color: #2e7d6f;
+  }
+  
+  .card .label {
+    font-weight: bold;
+    color: #219c90;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card p {
+    color: #333;
+    font-size: 0.95rem;
+  }
+  
+  .card-1 { grid-area: card1; }
+  .card-2 { grid-area: card2; }
+  .card-3 { grid-area: card3; }
+  .card-4 { grid-area: card4; }
+  
+  @media (max-width: 768px) {
+    .health-cards {
+      grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4";
+      grid-template-columns: 1fr;
+    }
+  } */
+  .health-cards {
+    display: grid;
+    grid-template-areas:
+      "card1 card2"
+      "card3 card3"
+      "card5 card4";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f6f9f8;
+  }
+  
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+  
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+  .card:nth-child(5) { animation-delay: 0.5s; }
+  
+  @keyframes fadeIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .card:hover::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(33,156,144,0.1), rgba(255,255,255,0.1));
+    z-index: 0;
+    animation: shimmer 1.5s infinite linear;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  .card h3 {
+    font-size: 1.3rem;
+    color: #2e7d6f;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card .label {
+    font-weight: bold;
+    color: #219c90;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card p {
+    color: #333;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card-1 { grid-area: card1; }
+  .card-2 { grid-area: card2; }
+  .card-3 { grid-area: card3; }
+  .card-4 { grid-area: card4; }
+  .card-5 { grid-area: card5; }
+  
+  @media (max-width: 768px) {
+    .health-cards {
+      grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card5"
+        "card4";
+      grid-template-columns: 1fr;
+    }
+    .card {
+      animation: none;
+      opacity: 1;
+    }
+  }
