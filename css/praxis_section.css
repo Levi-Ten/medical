@@ -1,0 +1,73 @@
+.praxis-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    margin-top: 70px;
+    background-color: #f6f9f8;
+  }
+  
+  .praxis-section .content {
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+  
+  .praxis-section .content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .praxis-section .content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .praxis-section .content ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .praxis-section .highlight {
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+  
+  .praxis-section .btn {
+    display: inline-block;
+    background-color: #34b6b7;
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+  }
+  
+  .praxis-section .image {
+    flex: 1 1 250px;
+    text-align: center;
+    max-width: 300px;
+    /* height: 500px; */
+  }
+  
+  .praxis-section .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .praxis-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .praxis-section .content,
+    .praxis-section .image {
+      flex: 1 1 100%;
+    }
+  
+    .praxis-section .content h2 {
+      font-size: 1.2rem;
+    }
+  }

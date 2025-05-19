@@ -1,0 +1,148 @@
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu-toggle {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* color: #007ea7; */
+    color: #2e7d6f;
+    margin-right: 20px;
+    display: none;
+}
+
+.navbar {
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007ea7;
+    font-weight: bold;
+    padding: 8px 10px;
+}
+
+.nav-links a:hover {
+    color: #219c90;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    top: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 6px 16px;
+}
+
+.dropdown-menu a {
+    color: #007ea7;
+    font-weight: normal;
+}
+/* praxis section */
+/* Responsive */
+@media (max-width: 992px) {
+    .dropdown-menu li {
+        padding: 0px;
+    }
+    
+    .container{
+        /* justify-content: flex-start; */
+        /* align-items: flex-start; */
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar.active {
+        display: flex;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        /* border: 1px solid; */
+        width: fit-content;
+        /* height: 100%; */
+        background-color: rgb(242, 251, 255);
+        box-shadow: 0 2px 5px rgba(242, 251, 255, 0.1);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        /* padding: 10px 20px; */
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background: #f8fcff;
+        box-shadow: none;
+        display: none;
+        padding-left: 30px;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+}
